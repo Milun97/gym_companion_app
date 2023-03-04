@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} Sub Body Parts {% endblock %}
+
+{% block header %}
+    <h1>Gym companion</h1>
+{% endblock %}
+
+{% block content %}.
+
+
+    <h2 class="d-flex align-items-center justify-content-center">Select sub body part you wish to train.</h2>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="row justify-content-center">
+            {% for sub_part in data %}
+            <div class="card col-3 m-2 text-center">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{sub_part.name}}</h5>
+                    <p class="card-text">{{sub_part.description}}</p>
+                    <a href="{{ url_for('exercises_page', sub_part=sub_part.name) }}" class="stretched-link"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

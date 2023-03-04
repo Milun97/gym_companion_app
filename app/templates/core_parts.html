@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} Core Body Parts {% endblock %}
+{% block links %}{% endblock %}
+{% block header %}
+    <h1>Gym companion</h1>
+{% endblock %}
+
+{% block content %}
+
+    <h2 class="d-flex align-items-center justify-content-center">Select core body part you wish to train.</h2>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="row justify-content-center">
+            {% for body_part in data %}
+            <div class="card col-3 m-2 text-center">
+                <img class="card-img-top" src="{{body_part.image_url}}" alt="Card image cap" width="200" height="121">
+                <div class="card-body">
+                    <h5 class="card-title">{{body_part.name}}</h5>
+                    <p class="card-text">{{body_part.description}}</p>
+                    <a href="{{ url_for('sub_body_parts_page', core_part=body_part.name) }}" class="stretched-link"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

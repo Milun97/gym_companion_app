@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/libraries/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/libraries/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/styles.css') }}">
+    {% block links %}{% endblock %}
+</head>
+
+<body>
+    <div id="header" class="d-flex align-items-center justify-content-center">
+        {% block header %}{% endblock %}
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="footer">
+        {% block footer %}{% endblock %}
+    </div>
+</body>
+
+</html>
